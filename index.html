@@ -18,8 +18,25 @@
 <body>
   <h1>Estadísticas Covid</h1>
 
-  <table data-toggle="table">
+  <table id="table" data-toggle="table" data-show-export="true"
+    data-url="https://disease.sh/v3/covid-19/countries/Spain,Italy,Germany">
+    <thead>
+      <tr>
+        <th data-field="country">País</th>
+        <th data-field="population"> Población total</th>
+        <th data-field="casesPerOneMillion" data-sortable="true" data-sort-name="casesPerOneMillion"
+          data-sort-order="desc" data-cell-style="cellStyle">Casos
+          activos por millón de habitantes</th>
+        <th id="date" data-field="updated" data-formatter="formatterDate">Última fecha de datos actualizados</th>
+      </tr>
+    </thead>
   </table>
+  <br>
+  <form action="">
+    <label for="">Add country</label>
+    <input type="text" name="" id="input">
+    <button>Enviar</button>
+  </form>
 
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
@@ -27,6 +44,10 @@
     integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+
+  <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.18.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
+  <script src="/app.js"></script>
 
 </body>
 
